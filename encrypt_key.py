@@ -5,7 +5,6 @@ import json
 
 KEYSTORE_PATH = Path(".keystore.json")
 
-
 def main():
     # input for your private key
     private_key = getpass.getpass("Enter your private key:\n")
@@ -17,7 +16,6 @@ def main():
     print(f"Saving to {KEYSTORE_PATH}...")
     with KEYSTORE_PATH.open("w") as fp:
         json.dump(encrypted_account, fp)
-
 
 if __name__ == "__main__":
     main()
