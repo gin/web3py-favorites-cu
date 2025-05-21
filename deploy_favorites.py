@@ -16,7 +16,7 @@ def main():
     w3 = Web3(Web3.HTTPProvider(RPC_URL))
     with open("favorites.vy", "r") as favorites_file:
         favorites_code = favorites_file.read()
-        compliation_details = compile_code(
+        compilation_details = compile_code(
             favorites_code, output_formats=["bytecode", "abi"]
         )
 
@@ -30,7 +30,7 @@ def main():
 
     # Create the contract in Python
     favorites_contract = w3.eth.contract(
-        abi=compliation_details["abi"], bytecode=compliation_details["bytecode"]
+        abi=compilation_details["abi"], bytecode=compilation_details["bytecode"]
     )
 
     # Submit the transaction that deploys the contract
